@@ -1,0 +1,23 @@
+{
+    "name": "tencentcloud/tcr",
+    "description": "TencentCloudApi php sdk tcr",
+    "type": "library",
+    "homepage": "https://github.com/tencentcloud-sdk-php/tcr",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "tencentcloudapi",
+            "email": "tencentcloudapi@tencent.com",
+            "homepage": "https://github.com/tencentcloud-sdk-php/tcr",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "tencentcloud/common": "VERSION"
+    },
+    "autoload": {
+        "psr-4": {
+            "TencentCloud\\": "./src/TencentCloud"
+        }
+    }
+}
