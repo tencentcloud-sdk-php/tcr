@@ -18,46 +18,29 @@ namespace TencentCloud\Tcr\V20190924\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * CreateInstanceToken返回参数结构体
+ * DescribeInternalEndpoints返回参数结构体
  *
- * @method string getUsername() 获取用户名
+ * @method array getAccessVpcSet() 获取内网接入信息的列表
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setUsername(string $Username) 设置用户名
+ * @method void setAccessVpcSet(array $AccessVpcSet) 设置内网接入信息的列表
 注意：此字段可能返回 null，表示取不到有效值。
- * @method string getToken() 获取访问凭证
- * @method void setToken(string $Token) 设置访问凭证
- * @method integer getExpTime() 获取访问凭证过期时间戳
- * @method void setExpTime(integer $ExpTime) 设置访问凭证过期时间戳
- * @method string getTokenId() 获取长期凭证的TokenId，短期凭证没有TokenId
-注意：此字段可能返回 null，表示取不到有效值。
- * @method void setTokenId(string $TokenId) 设置长期凭证的TokenId，短期凭证没有TokenId
-注意：此字段可能返回 null，表示取不到有效值。
+ * @method integer getTotalCount() 获取内网接入总数
+ * @method void setTotalCount(integer $TotalCount) 设置内网接入总数
  * @method string getRequestId() 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  * @method void setRequestId(string $RequestId) 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  */
-class CreateInstanceTokenResponse extends AbstractModel
+class DescribeInternalEndpointsResponse extends AbstractModel
 {
     /**
-     * @var string 用户名
+     * @var array 内网接入信息的列表
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $Username;
+    public $AccessVpcSet;
 
     /**
-     * @var string 访问凭证
+     * @var integer 内网接入总数
      */
-    public $Token;
-
-    /**
-     * @var integer 访问凭证过期时间戳
-     */
-    public $ExpTime;
-
-    /**
-     * @var string 长期凭证的TokenId，短期凭证没有TokenId
-注意：此字段可能返回 null，表示取不到有效值。
-     */
-    public $TokenId;
+    public $TotalCount;
 
     /**
      * @var string 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
@@ -65,12 +48,9 @@ class CreateInstanceTokenResponse extends AbstractModel
     public $RequestId;
 
     /**
-     * @param string $Username 用户名
+     * @param array $AccessVpcSet 内网接入信息的列表
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param string $Token 访问凭证
-     * @param integer $ExpTime 访问凭证过期时间戳
-     * @param string $TokenId 长期凭证的TokenId，短期凭证没有TokenId
-注意：此字段可能返回 null，表示取不到有效值。
+     * @param integer $TotalCount 内网接入总数
      * @param string $RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
      */
     function __construct()
@@ -86,20 +66,17 @@ class CreateInstanceTokenResponse extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("Username",$param) and $param["Username"] !== null) {
-            $this->Username = $param["Username"];
+        if (array_key_exists("AccessVpcSet",$param) and $param["AccessVpcSet"] !== null) {
+            $this->AccessVpcSet = [];
+            foreach ($param["AccessVpcSet"] as $key => $value){
+                $obj = new AccessVpc();
+                $obj->deserialize($value);
+                array_push($this->AccessVpcSet, $obj);
+            }
         }
 
-        if (array_key_exists("Token",$param) and $param["Token"] !== null) {
-            $this->Token = $param["Token"];
-        }
-
-        if (array_key_exists("ExpTime",$param) and $param["ExpTime"] !== null) {
-            $this->ExpTime = $param["ExpTime"];
-        }
-
-        if (array_key_exists("TokenId",$param) and $param["TokenId"] !== null) {
-            $this->TokenId = $param["TokenId"];
+        if (array_key_exists("TotalCount",$param) and $param["TotalCount"] !== null) {
+            $this->TotalCount = $param["TotalCount"];
         }
 
         if (array_key_exists("RequestId",$param) and $param["RequestId"] !== null) {
