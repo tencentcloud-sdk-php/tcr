@@ -18,20 +18,28 @@ namespace TencentCloud\Tcr\V20190924\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * CreateUserPersonal请求参数结构体
+ * ModifyInstance请求参数结构体
  *
- * @method string getPassword() 获取用户密码，密码必须为8到16位
- * @method void setPassword(string $Password) 设置用户密码，密码必须为8到16位
+ * @method string getRegistryId() 获取实例ID
+ * @method void setRegistryId(string $RegistryId) 设置实例ID
+ * @method string getRegistryType() 获取实例的规格
+ * @method void setRegistryType(string $RegistryType) 设置实例的规格
  */
-class CreateUserPersonalRequest extends AbstractModel
+class ModifyInstanceRequest extends AbstractModel
 {
     /**
-     * @var string 用户密码，密码必须为8到16位
+     * @var string 实例ID
      */
-    public $Password;
+    public $RegistryId;
 
     /**
-     * @param string $Password 用户密码，密码必须为8到16位
+     * @var string 实例的规格
+     */
+    public $RegistryType;
+
+    /**
+     * @param string $RegistryId 实例ID
+     * @param string $RegistryType 实例的规格
      */
     function __construct()
     {
@@ -46,8 +54,12 @@ class CreateUserPersonalRequest extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("Password",$param) and $param["Password"] !== null) {
-            $this->Password = $param["Password"];
+        if (array_key_exists("RegistryId",$param) and $param["RegistryId"] !== null) {
+            $this->RegistryId = $param["RegistryId"];
+        }
+
+        if (array_key_exists("RegistryType",$param) and $param["RegistryType"] !== null) {
+            $this->RegistryType = $param["RegistryType"];
         }
     }
 }
