@@ -24,8 +24,8 @@ use TencentCloud\Common\AbstractModel;
 注意：此字段可能返回 null，表示取不到有效值。
  * @method void setServiceAccounts(array $ServiceAccounts) 设置服务级账号列表
 注意：此字段可能返回 null，表示取不到有效值。
- * @method integer getTotalCount() 获取自定义账户数量
- * @method void setTotalCount(integer $TotalCount) 设置自定义账户数量
+ * @method integer getTotalCount() 获取服务级账户数量
+ * @method void setTotalCount(integer $TotalCount) 设置服务级账户数量
  * @method string getRequestId() 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  * @method void setRequestId(string $RequestId) 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  */
@@ -38,7 +38,7 @@ class DescribeServiceAccountsResponse extends AbstractModel
     public $ServiceAccounts;
 
     /**
-     * @var integer 自定义账户数量
+     * @var integer 服务级账户数量
      */
     public $TotalCount;
 
@@ -50,7 +50,7 @@ class DescribeServiceAccountsResponse extends AbstractModel
     /**
      * @param array $ServiceAccounts 服务级账号列表
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param integer $TotalCount 自定义账户数量
+     * @param integer $TotalCount 服务级账户数量
      * @param string $RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
      */
     function __construct()
